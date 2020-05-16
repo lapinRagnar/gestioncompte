@@ -1,0 +1,32 @@
+<%= form_with(model: depense, local: true) do |form| %>
+  <% if depense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(depense.errors.count, "error") %> prohibited this depense from being saved:</h2>
+
+      <ul>
+        <% depense.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :montant %>
+    <%= form.text_field :montant %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
